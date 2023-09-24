@@ -1,5 +1,7 @@
+using CrudApi.Configurations;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection(key:"ConnectionStrings"));
 // Add services to the container.
 
 builder.Services.AddControllers();
