@@ -1,8 +1,11 @@
 using MySql.Data;
+using CrudApi.Models;
+using CrudApi.Configurations;
+using Microsoft.Extensions.Options;
+
 namespace CrudApi.Services;
-using Microsoft.Extensions.
 
 public class UsersService
 {
-    public async Task<List<Users>>
+    public async Task<List<User>>
 }
