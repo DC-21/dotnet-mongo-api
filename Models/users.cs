@@ -3,7 +3,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CrudApi.Models;
-public class user{
+[Table("users")]
+public class User{
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
