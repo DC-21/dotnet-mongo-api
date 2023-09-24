@@ -1,5 +1,5 @@
-namespace CrudApi.Configuration;
+namespace CrudApi.Configurations;
 
-public class DefaultConnection{
-    public string ConnectionString { get; set;} = null!;
+public class DatabaseSettings{
+    public string DefaultConnection { get; set;} = null!;
 }
