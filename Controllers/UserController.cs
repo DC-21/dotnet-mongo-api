@@ -19,4 +19,12 @@ public class CrudController : ControllerBase
             return NotFound();
         return Ok(existingUser);
     }
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        var allUsers = await _userService.GetAsync();
+        if (allUsers.Any())
+            return Ok(allUsers);
+        return NotFound();
+    }
 }
