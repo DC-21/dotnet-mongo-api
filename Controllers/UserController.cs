@@ -51,6 +51,6 @@ public class CrudController : ControllerBase
         if (existingUser is null)
             return BadRequest();
         await _userService.RemoveAsync(id);
-        return NotFound();
+        return NoContent();
     }
 }
