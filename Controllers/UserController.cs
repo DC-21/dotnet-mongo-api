@@ -39,9 +39,18 @@ public class CrudController : ControllerBase
     {
         var existingUser = await _userService.GetAsync(id);
         if (existingUser is null)
-            return NoContent();
+            return BadRequest();
         user.Id = existingUser.Id;
         await _userService.UpdateAsync(user);
         return NoContent();
+    }
+    [HttpDelete("{id:length(24)}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        var existingUser = await _userService.GetAsync(id);
+        if (existingUser is null)
+            return BadRequest();
+        await _userService.RemoveAsync(id);
+        return NotFound();
     }
 }
