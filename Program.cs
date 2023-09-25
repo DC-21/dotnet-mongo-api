@@ -1,7 +1,7 @@
 using CrudApi.Configurations;
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection(key:"ConnectionStrings"));
+builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection(key:"MongoDatabase"));
 // Add services to the container.
 
 builder.Services.AddControllers();
