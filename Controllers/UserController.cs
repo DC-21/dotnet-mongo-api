@@ -35,8 +35,12 @@ public class CrudController : ControllerBase
         return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
     }
     [HttpPut("{id:length(24)}")]
-    public async Task<IActionResult> Put(User user)
+    public async Task<IActionResult> Update(string id, User user)
     {
+        var existingUser = await _userService.GetAsync(id);
+        if (existingUser is null)
+            return NoContent();
+        user.Id = existingUser.Id;
         await _userService.UpdateAsync(user);
         return NoContent();
     }
