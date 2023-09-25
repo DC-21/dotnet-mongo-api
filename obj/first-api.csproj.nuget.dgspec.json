@@ -42,9 +42,9 @@
               "target": "Package",
               "version": "[7.0.11, )"
             },
-            "MySql.Data": {
+            "MongoDB.Driver": {
               "target": "Package",
-              "version": "[8.1.0, )"
+              "version": "[2.21.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
